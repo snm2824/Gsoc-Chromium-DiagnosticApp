@@ -1,0 +1,56 @@
+{
+    "short_name": "Diagnostic App",
+    "name": "Diago",
+    "version": "1.0",
+    "description": "Build an PWA and Extension",
+  
+    "permissions": ["system.cpu", "system.memory","system.storage"],
+    "icons":   [
+      {
+        "src": "images/get_started192.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "images/get_started512.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any maskable"
+      }
+    ],
+
+    "browser_action":{
+     "default_icon":     { 
+      
+        
+      
+      "16": "images/get_started16.png",
+    "32": "images/get_started32.png",
+     "48": "images/get_started48.png",
+   "128": "images/get_started128.png"
+    },
+     "default_popup":"poupup.html"
+    },
+    "start_url": "/?source=pwa",
+    "background_color": "#3367D6",
+    "scope": "/",
+    "theme_color": "#3367D6",
+    "background":{
+       "scripts":["javaS/backgroung.js"],
+       "service worker":"service-worker.js"
+    },
+    "content_scripts":[
+      {
+        "matches":["http://*/*","https://*/*"],
+        "js":["javaS/myScripts.js"]
+      }
+    ],
+
+    "display":"standalone",
+    
+
+  
+    "manifest_version": 2
+   
+  }
